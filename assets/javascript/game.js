@@ -6,9 +6,11 @@ var badGuessText = document.getElementById("bad-guesses");
 var guessDisplayText = document.getElementById("the-word");
 var userWins = document.getElementById("user-wins");
 var userGuesses = document.getElementById("guesses-left");
+var userResults = document.getElementById("result");
 
 // setting the array of words that will be randomly selected to guess from
-var wordArray = ["LETTUCE", "CARROT", "BANANA", "PEPPER", "APPLE", "ORANGE", "APRICOT", "POTATO", "PUMPKIN", "MANGO", "PAPAYA", "RADISH", "CHERRY", "CELERY"];
+var wordArray = ["LETTUCE", "CARROT", "BANANA", "PEPPER", "APPLE", "ORANGE", "APRICOT", "POTATO", "PUMPKIN", "MANGO", "PAPAYA", "RADISH", "CHERRY", "CELERY",
+                "LEMON", "LIME", "TOMATO", "CUCUMBER", "BROCCOLI", "PEACH"];
 
 //setting variables for things like wins, guesses left, and other in-game variables
 var currentGuess;
@@ -41,8 +43,8 @@ document.onkeyup = function(event) {
             checkOurGuess();
             //update the user display with new info
             displayUserGuessArray();
-            //check to see if we won
-            checkWin();
+            // since this is only the first letter, we do not check to see if we won or not. There is no
+            // combination of factors that would allow for a one-guess win.
         }
         else {
             // if array is not empty, then check to make sure we haven't guessed the letter already
@@ -58,8 +60,14 @@ document.onkeyup = function(event) {
                 // if we won, update our win counter, display it for th user, and start a new game
                 wins++
                 userWins.textContent = wins;
+                userResults.textContent = "Good Job! You guessed " + currentWord + "!!";
                 initializeGame();
             }
+        }
+        // need to check to see if the user is out of guesses and restart a new game if they are. 
+        if (guessesLeft == 0){
+            userResults.textContent = "Sorry, the answer was " + currentWord + ". Please try again.";
+            initializeGame();
         }
     }   
 }

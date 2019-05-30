@@ -34,3 +34,9 @@
     font-size: 16pt;
     font-weight: bold;
  }
+
+ #result {
+     font-size: 14pt;
+     font-weight: bold;
+     height: 50px;
+ }
