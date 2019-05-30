@@ -1,20 +1,23 @@
 // 
 // Declaring Global Variables
 //
-var currentGuess
+var currentGuess;
 var badGuessText = document.getElementById("bad-guesses");
+var guessDisplayText = document.getElementById("the-word");
+var userWins = document.getElementById("user-wins");
 var badGuesses = "";
 var wins = 0;
-var userWins = document.getElementById("user-wins");
 var guessesLeft = 10;
-var wordArray = ["LETTUCE", "CARROT", "BANANA", "PEPPER"]
-var currentWord
+var wordArray = ["LETTUCE", "CARROT", "BANANA", "PEPPER"];
+var currentWord;
+var goodGuess;
 var guessArray = [" "];
-var goodGuess
+var currentWordArray = [""];
+var guessDisplayArray = [""];
 
-currentWord = wordArray[Math.floor(Math.random() * wordArray.length)];
 
-// alert(currentWord)
+// sets up a new game
+initializeGame();
 
 document.onkeyup = function(event) {
     // convert all guesses to uppercase to facilitate matching
@@ -35,8 +38,7 @@ document.onkeyup = function(event) {
             }
         }
         console.log(guessArray)
-    }
-
+    }   
 }
 
 function addToBadGuessString() {
@@ -69,4 +71,30 @@ function checkGuess() {
         }
     }
     return isGuessed;
+}
+
+function displayUserGuessArray() {
+    //This functions is set up update the user guess display area of the game after any changes to the array
+    var userText = ""
+    for (i = 0; i < guessDisplayArray.length; i++){
+        userText = userText + guessDisplayArray[i] + " ";
+    }
+    guessDisplayText.textContent = userText;
+}
+
+function initializeGame() {
+    // This function sets up a new game, whether on the initial load or after a win.
+    guessArray = [""];
+    currentWordArray = [""];
+    currentWord = wordArray[Math.floor(Math.random() * wordArray.length)];
+    console.log(currentWord);
+    console.log(currentWord.length);
+    for (var i=0; i<currentWord.length; i++){
+        currentWordArray[i] = currentWord.charAt(i);
+    }
+    for (var i=0; i<currentWordArray.length; i++){
+        guessDisplayArray[i] = "_";
+    }
+    displayUserGuessArray();
+
 }
