@@ -1,0 +1,36 @@
+/* 
+ *  Style to set background image for the game:
+ */
+ body {
+     background-image: url("../images/pexels-photo-264537.jpeg");
+ }
+
+ .jumbotron {
+     text-align: center;
+ }
+
+ .guess_row{
+     background: rgb(233,236,239);
+     text-align: center;
+ }
+
+ .the-word {
+     font-size: 24pt;
+ }
+
+ .other_row {
+     background: rgb(233,236,239);
+ }
+
+ h3{
+     text-align: center;
+ }
+
+ .letters {
+     height: 200px;
+ }
+
+ .wins {
+    font-size: 16pt;
+    font-weight: bold;
+ }

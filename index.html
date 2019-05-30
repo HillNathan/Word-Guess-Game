@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Who's That Crudite??!!</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+<div class="container">
+    <!-- 
+        This is a row to display the header for our game 
+    -->
+    <div class="row">
+    <div class="col-lg-12">
+        <div class="jumbotron jumbotron-fluid m-3 p-4">
+            <h1 class="display-2">Who's That Crudite??!!</h1>
+            <p class="lead">The word guessing game based on fresh fruit and vegetables!!</p>
+        </div>
+    </div>
+    </div>
+
+    <!--
+        This is a row to show the word to be guessed
+    -->
+    <div class="row justify-content-center guess_row m-3 p-4">
+    <div class="col-md-6 justify-content-center">
+        <span class="the-word"> _ _ _ _ _ _ _</span>
+    </div>
+    </div>
+
+    <!--
+        This is a section to hold the instructions column and the letters guessed area
+    -->
+
+    <div class="row m-2">
+        <div class="col other_row m-2 p-3">
+            <h3>Instructions</h3>
+            <hr>
+            <p>Guess the word to win! Press a letter key to guess a letter in the word. 
+                You can guess up to 12 incorrect letters before losing the game. Re-guessing a letter you already tried will not result in an 
+                additional lost guess. </p>
+            <p>Good Luck and have fun!</p>
+        </div>
+        <div class="col other_row m-2 p-3">
+            <div class="row">
+                <div class="col letters">
+                    <h3>Letters Guessed</h3>
+                    <hr>
+                    <span class="the-word"> R, Q, P, T, Z, X</span>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col wins">
+                    <p>
+                    Wins: <span id="user-wins">0</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+        aaaaand a footer to close things out
+    -->
+
+    <div class="footer guess_row m-3 p-2">
+        Copyright &copy 2019 Nathan Hill
+    </div>
+
+
+
+</div>    
+</body>
+<script src="assets/javascript/game.js"></script>
+</html>
