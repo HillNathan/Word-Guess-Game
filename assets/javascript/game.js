@@ -11,7 +11,7 @@ var userResults = document.getElementById("result");
 // setting the array of words that will be randomly selected to guess from
 var wordArray = ["LETTUCE", "CARROT", "BANANA", "PEPPER", "APPLE", "ORANGE", "APRICOT", "POTATO", "PUMPKIN", "MANGO", "PAPAYA", 
                 "RADISH", "CHERRY", "CELERY", "LEMON", "LIME", "TOMATO", "CUCUMBER", "BROCCOLI", "PEACH", "PINEAPPLE", 
-                "ASPARAGUS", "RUTEBEGA", "AVOCADO", "ZUCCHINI", "SQUASH", "TANGERINE", "ONION", "OLIVE", 
+                "ASPARAGUS", "RUTABEGA", "AVOCADO", "ZUCCHINI", "SQUASH", "TANGERINE", "ONION", "OLIVE", 
                 "PARSNIP", "STRAWBERRY", "BLUEBERRY", "RHUBARB", "KALE", "BLACKBERRY"];
 
 //setting variables for things like wins, guesses left, and other in-game variables
