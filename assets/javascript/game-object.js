@@ -2,8 +2,10 @@
 // Declaring Global Variables
 //
 // setting the array of words that will be randomly selected to guess from
-var wordArray = ["LETTUCE", "CARROT", "BANANA", "PEPPER", "APPLE", "ORANGE", "APRICOT", "POTATO", "PUMPKIN", "MANGO", "PAPAYA", "RADISH", "CHERRY", "CELERY",
-                "LEMON", "LIME", "TOMATO", "CUCUMBER", "BROCCOLI", "PEACH"];
+var wordArray = ["LETTUCE", "CARROT", "BANANA", "PEPPER", "APPLE", "ORANGE", "APRICOT", "POTATO", "PUMPKIN", "MANGO", "PAPAYA", 
+                "RADISH", "CHERRY", "CELERY", "LEMON", "LIME", "TOMATO", "CUCUMBER", "BROCCOLI", "PEACH", "PINEAPPLE", 
+                "ASPARAGUS", "RUTEBEGA", "AVOCADO", "ZUCCHINI", "SQUASH", "TANGERINE", "ONION", "OLIVE", 
+                "PARSNIP", "STRAWBERRY", "BLUEBERRY", "RHUBARB", "KALE", "BLACKBERRY"];
 
 var goodguess;
 
