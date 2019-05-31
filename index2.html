@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Who's That Crudite??!!</title>
+    <title>Name That Crudite!!</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -21,9 +21,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="jumbotron jumbotron-fluid m-2 p-4">
-                    <h1 class="display-2">Who's That Crudite??!!</h1>
+                    <h1 class="display-2">Name That Crudite!!</h1>
                     <p class="lead">The word guessing game based on fresh fruit and vegetables!!</p>
-                    <p><small>You can view my object-based game by clicking <a href="index2.html">HERE</a>.</small></p>
+                    <p><small>You can view my original game by clicking <a href="index.html">HERE</a>.</small></p>
                 </div>
             </div>
         </div>
@@ -32,8 +32,8 @@
         This is a row to show the word to be guessed
     -->
         <div class="row justify-content-center guess_row m-2 p-4">
-            <div class="col-md-6 justify-content-center">
-                <span class="the-word" id="the-word"></span>
+            <div class="col justify-content-center the-word">
+                Your word is : <span id="the-word"></span>
             </div>
         </div>
 
@@ -43,20 +43,23 @@
 
         <div class="row m-1">
             <div class="col other_row m-1 p-3">
-                <h3>Instructions</h3>
-                <hr>
-                <p>Guess the word to win! Press a letter key to guess a letter in the word, which will be a single-word fruit or vegetable.
-                    You can guess up to 10 incorrect letters before losing the game. Re-guessing a letter you already
-                    tried will not result in an additional lost guess. </p>
-                <p>Good Luck and have fun!</p>
-                <hr>
+                <div id="instructions">
+                    <h3>Instructions</h3>
+                    <hr>
+                    <p>Guess the word to win! Press a letter key to guess a letter in the word, which will be a single-word fruit or vegetable.
+                        You can guess up to 10 incorrect letters before losing the game. Re-guessing a letter you already
+                        tried will not result in an additional lost guess. </p>
+                    <p>Good Luck and have fun!</p>
+                    <hr>
+                </div>
                 <!-- Here is a div to show the results of the game -->
                 <div id="result"></div>
+                <div id="reset"><button id="reset-button" onclick="game.initialize()">Click Here to play again!!!</button></div>
             </div>
             <div class="col other_row m-1 p-3">
                 <div class="row">
                     <div class="col letters">
-                        <h3>Letters Guessed</h3>
+                        <h3>Wrong Letters</h3>
                         <hr>
                         <span class="the-word" id="bad-guesses"> </span>
                     </div>
@@ -71,6 +74,7 @@
                             Wins: <span id="user-wins">0</span>
                         </p>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -87,6 +91,6 @@
 
     </div>
 </body>
-<script src="assets/javascript/game.js"></script>
+<script src="assets/javascript/game-object.js"></script>
 
 </html>

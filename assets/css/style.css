@@ -1,7 +1,8 @@
 /* 
- *  Style to set background image for the game:
+ *  Some small changes to Bootstrap styling to make my game look extra good...
  */
  body {
+     /* Stock photo for background found on pexels.com */
      background-image: url("../images/pexels-photo-264537.jpeg");
  }
 
@@ -36,7 +37,28 @@
  }
 
  #result {
-     font-size: 14pt;
+     /* visibility: hidden; */
+     display: none;
+     text-align: center;
+     font-size: 24pt;
      font-weight: bold;
-     height: 50px;
+     /* height: 50px; */
+ }
+
+ #reset {
+     position: relative;
+     display: none;
+     background-color: navy;
+     color: rgb(233,236,239);
+     text-align: center;
+     width: 60%;
+     margin:auto;
+     padding: 20px;
+     font-weight: 700;
+ }
+ #reset-button {
+     border:none;
+     background-color: navy;
+     color: rgb(233,236,239);
+
  }

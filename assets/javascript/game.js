@@ -21,9 +21,9 @@ var currentWord;
 var goodGuess;
 
 // setting up some arrays to be used for guess tracking, display, and comparison for wins
-var guessArray = [" "];
-var currentWordArray = [""];
-var guessDisplayArray = [""];
+var guessArray = [];
+var currentWordArray = [];
+var guessDisplayArray = [];
 
 
 // sets up a new game, bringing everything back to initial setup status
@@ -57,7 +57,7 @@ document.onkeyup = function(event) {
             displayUserGuessArray();
             // call a function that returns "true" if we won the game
             if(checkWin()){
-                // if we won, update our win counter, display it for th user, and start a new game
+                // if we won, update our win counter, display it for the user, and start a new game
                 wins++
                 userWins.textContent = wins;
                 userResults.textContent = "Good Job! You guessed " + currentWord + "!!";
