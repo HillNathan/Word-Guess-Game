@@ -8,6 +8,7 @@ var wordArray = ["LETTUCE", "CARROT", "BANANA", "PEPPER", "APPLE", "ORANGE", "AP
                 "PARSNIP", "STRAWBERRY", "BLUEBERRY", "RHUBARB", "KALE", "BLACKBERRY"];
 
 var goodguess;
+var gameoverman = false;
 
 function isLetter(c) {
     // returns true if c is a string, false if not a string
@@ -94,6 +95,7 @@ var game = {
                 this.guessesLeft--;
                 this.addToBadGuess();
             }
+            return guess;
         },
 
         updateDisplay: function () {        ///displayUserGuessArray
@@ -135,6 +137,7 @@ var game = {
             game.displayInstructions.style.display = "initial";
             game.displayUserResults.style.display = "none";
             game.displayReset.style.display = "none";
+            gameoverman = false;
         },
 
         checkWin: function () {         ////checkWin
@@ -158,25 +161,18 @@ var game = {
 game.initialize();
 
 document.onkeyup = function(event) {
+    if(gameoverman == false){
     //primary game function, triggers off of key-up event
     // convert all guesses to uppercase to facilitate matching
     game.currentGuess = event.key.toUpperCase();
 
     // used a handy bit of code to make sure all guesses are letters only
     if ((isLetter(game.currentGuess)) && (game.currentGuess.length === 1)){
+
+        console.log("a letter was guessed");
+        console.log("that letter was " + game.currentGuess);
         // if array is reset then just add the first guess
-        if (game.guessArray.length == -1) {
-            game.guessArray.push(game.currentGuess);
-            //check the guess to see if it is in our word
-            game.checkGuess();
-            //update the user display with new info
-            game.updateDisplay();
-            // since this is only the first letter, we do not check to see if we won or not. There is no
-            // combination of factors that would allow for a one-guess win.
-        }
-        else {
-            // if array is not empty, then check to make sure we haven't guessed the letter already
-            goodGuess = game.checkGuess();
+            goodguess = game.alreadyGuessed();
             if (goodguess == false){
                 game.guessArray.push(game.currentGuess);
                 // if we haven't guessed the letter already check to see if we guessed right
@@ -194,14 +190,19 @@ document.onkeyup = function(event) {
                 game.displayInstructions.style.display = "none";
                 game.displayUserResults.style.display = "block";
                 game.displayReset.style.display = "block";
+                gameoverman = true;
 
-            }
+            
         }
         // need to check to see if the user is out of guesses and restart a new game if they are. 
-        if (game.guessesLeft == 0){
-            game.displayuserResults.innerHTML = "Sorry, the answer was " + currentWord + ". Please try again.";
-            game.initialize();
+        if (game.guessesLeft === 0){
+            game.displayUserResults.innerHTML = "Sorry, the answer was " + game.currentWord + ". Please try again.";
+            game.displayInstructions.style.display = "none";
+            game.displayUserResults.style.display = "block";
+            game.displayReset.style.display = "block";
+            gameoverman = true;
+            // game.initialize();
         }
-    }   
+    } }  
 }
 
