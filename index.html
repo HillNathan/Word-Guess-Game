@@ -31,19 +31,8 @@
         This is a row to show the word to be guessed
     -->
         <div class="row justify-content-center guess_row m-2 p-4">
-            <div class="col" id="splash">
-                <p>
-                    I completed this assignment in two ways. The first way I completed it was to write function-oriented 
-                    Javascript and make the game work the best I could. I was able to build a functional game that I am 
-                    proud of, and you can find that game <a href="non-object-game.html">HERE</a>.
-                </p>
-                <p>
-                    I also completed this assignment by re-building the game into a single object, including the div element
-                    references. There are only a few variables and functions that are outside the object; most of the game 
-                    variables I was able to declare as properties, and the functions as object methods. For this one, I also 
-                    was able to make a "win" message show up using the javascript to prompt the user to click on a button to 
-                    play again. This version of the game can be found <a href="object-game.html">HERE</a>.
-                </p>
+            <div class="col justify-content-center the-word">
+                Your word is : <span id="the-word"></span>
             </div>
         </div>
 
@@ -51,22 +40,25 @@
         This is a section to hold the instructions column and the letters guessed area
     -->
 
-        <!-- <div class="row m-1">
+        <div class="row m-1">
             <div class="col other_row m-1 p-3">
-                <h3>Instructions</h3>
-                <hr>
-                <p>Guess the word to win! Press a letter key to guess a letter in the word, which will be a single-word fruit or vegetable.
-                    You can guess up to 10 incorrect letters before losing the game. Re-guessing a letter you already
-                    tried will not result in an additional lost guess. </p>
-                <p>Good Luck and have fun!</p>
-                <hr>
+                <div id="instructions">
+                    <h3>Instructions</h3>
+                    <hr>
+                    <p>Guess the word to win! Press a letter key to guess a letter in the word, which will be a single-word fruit or vegetable.
+                        You can guess up to 10 incorrect letters before losing the game. Re-guessing a letter you already
+                        tried will not result in an additional lost guess. </p>
+                    <p>Good Luck and have fun!</p>
+                    <hr>
+                </div>
                 <!-- Here is a div to show the results of the game -->
-                <!--<div id="result"></div>
+                <div id="result"></div>
+                <div id="reset"><button id="reset-button" onclick="game.initialize()">Click Here to play again!!!</button></div>
             </div>
             <div class="col other_row m-1 p-3">
                 <div class="row">
                     <div class="col letters">
-                        <h3>Letters Guessed</h3>
+                        <h3>Wrong Letters</h3>
                         <hr>
                         <span class="the-word" id="bad-guesses"> </span>
                     </div>
@@ -81,9 +73,10 @@
                             Wins: <span id="user-wins">0</span>
                         </p>
                     </div>
+
                 </div>
             </div>
-        </div> -->
+        </div>
 
         <!--
         aaaaand a footer to close things out
@@ -97,6 +90,6 @@
 
     </div>
 </body>
-<!-- <script src="assets/javascript/game.js"></script> -->
+<script src="assets/javascript/game-object.js"></script>
 
 </html>
