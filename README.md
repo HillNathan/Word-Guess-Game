@@ -16,6 +16,7 @@ The instructions specified to keep track of the following on the screen for the 
 <p style="font-size:16pt">
 I completed the assignment, and then decided to challenge myself and re-do the assignment in "hard mode" using an object to hold all of the code for the game. Completing the assignment without objects first was very helpful, and I found that moving from non-object to object code did not take me very long, except for going back and fixing all of the errors from object calls I missed. This is the active page. 
 </p>
+<p style="font-size:16pt">
 <br>
 Thanks!
 <br>
