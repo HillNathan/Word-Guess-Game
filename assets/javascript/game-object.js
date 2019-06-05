@@ -28,6 +28,7 @@ var game = {
         displayBadGuess : document.getElementById("bad-guesses"),       ///badGuessText
         displayGuessText : document.getElementById("the-word"),         ///guessDisplayText
         displayWins : document.getElementById("user-wins"),             ///userWins
+        displayLosses : document.getElementById("user-losses"),
         displayUserGuesses : document.getElementById("guesses-left"),   ///userGuesses
         displayUserResults : document.getElementById("result"),         ///userResults
         displayInstructions : document.getElementById("instructions"),
@@ -37,6 +38,7 @@ var game = {
         currentGuess: "",           ///currentGuess
         badGuesses : "",        ///badGuesses
         wins : 0,               ///wins
+        losses : 0,
         guessesLeft : 10,       ///guessesLeft
         currentWord: "",            ///currentWord
 
@@ -172,10 +174,7 @@ document.onkeyup = function(event) {
 
     // used a handy bit of code to make sure all guesses are letters only
     if ((isLetter(game.currentGuess)) && (game.currentGuess.length === 1)){
-
-        console.log("a letter was guessed");
-        console.log("that letter was " + game.currentGuess);
-        // if array is reset then just add the first guess
+        
             goodguess = game.alreadyGuessed();
             if (goodguess == false){
                 game.guessArray.push(game.currentGuess);
@@ -201,6 +200,8 @@ document.onkeyup = function(event) {
         }
         // need to check to see if the user is out of guesses and restart a new game if they are. 
         if (game.guessesLeft === 0){
+            game.losses++;
+            game.displayLosses.innerHTML = game.losses;
             game.displayUserResults.innerHTML = "Sorry, the answer was " + game.currentWord + ". Please try again.<br><br>";
             loseAudio.play();
             game.displayInstructions.style.display = "none";
