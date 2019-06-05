@@ -10,6 +10,10 @@ var wordArray = ["LETTUCE", "CARROT", "BANANA", "PEPPER", "APPLE", "ORANGE", "AP
 var goodguess;
 var gameoverman = false;
 
+//setting audio files for win and loss results:
+var winAudio = document.getElementById("win-audio"); 
+var loseAudio = document.getElementById("lose-audio");
+
 function isLetter(c) {
     // returns true if c is a string, false if not a string
     // use in conjunction with a length check in the if clause to make sure we 
@@ -185,6 +189,7 @@ document.onkeyup = function(event) {
                 game.wins++
                 game.displayWins.innerHTML = game.wins;
                 game.displayUserResults.innerHTML = "Good Job! You guessed <br>" + game.currentWord + "!!<br><br>";
+                winAudio.play();
                 // game.initialize();
                 //trying this out...
                 game.displayInstructions.style.display = "none";
@@ -196,7 +201,8 @@ document.onkeyup = function(event) {
         }
         // need to check to see if the user is out of guesses and restart a new game if they are. 
         if (game.guessesLeft === 0){
-            game.displayUserResults.innerHTML = "Sorry, the answer was " + game.currentWord + ". Please try again.";
+            game.displayUserResults.innerHTML = "Sorry, the answer was " + game.currentWord + ". Please try again.<br><br>";
+            loseAudio.play();
             game.displayInstructions.style.display = "none";
             game.displayUserResults.style.display = "block";
             game.displayReset.style.display = "block";
